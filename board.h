@@ -14,7 +14,10 @@ using namespace std;
 class board{
 
 public:
+    board();
+    board(int w, int h)
     vector<bug*> bugs;
+    void tap(){};
 
 protected:
     //Width, height variables
