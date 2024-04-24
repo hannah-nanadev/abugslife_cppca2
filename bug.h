@@ -9,6 +9,7 @@
 using namespace std;
 class bug {
 
+protected:
     int id;
     pair<int, int> position;
     int direction; //TODO: replace with enum
@@ -16,10 +17,9 @@ class bug {
     bool alive;
     list<pair<int,int>> path;
 
+public:
     virtual void move()=0;
-
     bool isWayBlocked();
-
 };
 
 
