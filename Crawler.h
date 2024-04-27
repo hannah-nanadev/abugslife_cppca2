@@ -5,10 +5,12 @@
 #ifndef ABUGSLIFE_CRAWLER_H
 #define ABUGSLIFE_CRAWLER_H
 #include "bug.h"
+#include "board.h"
 
 class Crawler:public bug{
 public :
     Crawler(int id, int x, int y, int dir, int size);
+    void move();
 };
 
 

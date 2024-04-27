@@ -20,6 +20,7 @@ protected:
 public:
     virtual void move()=0;
     bool isWayBlocked();
+    int ranDirection();
 };
 
 

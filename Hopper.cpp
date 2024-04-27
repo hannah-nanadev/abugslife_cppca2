@@ -12,3 +12,11 @@ Hopper::Hopper(int id, int x, int y, int dir, int size, int hop):bug()
     this->size = size;
     this->hoplength = hop;
 }
+
+void Hopper::move()
+{
+    while(isWayBlocked())
+    {
+        direction = ranDirection();
+    }
+}

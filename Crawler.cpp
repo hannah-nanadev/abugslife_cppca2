@@ -10,4 +10,13 @@ Crawler::Crawler(int id, int x, int y, int dir, int size):bug()
     this->position = pair<int, int>(x, y);
     this->direction = dir;
     this->size = size;
+
+}
+
+void Crawler::move()
+{
+    while(isWayBlocked())
+    {
+        direction = ranDirection();
+    }
 }
