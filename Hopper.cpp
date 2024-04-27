@@ -11,6 +11,8 @@ Hopper::Hopper(int id, int x, int y, int dir, int size, int hop):bug()
     this->direction = dir;
     this->size = size;
     this->hoplength = hop;
+
+    path.push_back(position);
 }
 
 void Hopper::move()
@@ -19,4 +21,37 @@ void Hopper::move()
     {
         direction = ranDirection();
     }
+
+    switch(direction){
+        case 1: //north
+            position.second+hoplength;
+            if(position.second>9)
+            {
+                position.second = 9;
+            }
+            break;
+        case 2: //east
+            position.first+hoplength;
+            if(position.first>9)
+            {
+                position.first = 9;
+            }
+            break;
+        case 3: //south
+            position.second-hoplength;
+            if(position.second<0)
+            {
+                position.second=0;
+            }
+            break;
+        case 4: //west
+            position.first-hoplength;
+            if(position.first<0)
+            {
+                position.second=0;
+            }
+            break;
+    }
+
+    path.push_back(position);
 }
