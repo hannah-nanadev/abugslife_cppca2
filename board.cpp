@@ -5,5 +5,3 @@
 #include "board.h"
 
 board::board():w(9), h(9){}
-
-board::board(int w, int h):w(w), h(h) {}

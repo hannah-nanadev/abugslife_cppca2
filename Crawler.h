@@ -6,9 +6,9 @@
 #define ABUGSLIFE_CRAWLER_H
 #include "bug.h"
 
-class Crawler :public bug{
+class Crawler:public bug{
 public :
-    Crawler();
+    Crawler(int id, int x, int y, int dir, int size);
 };
 
 

@@ -18,7 +18,6 @@ protected:
     list<pair<int,int>> path;
 
 public:
-    bug();
     virtual void move()=0;
     bool isWayBlocked();
 };

@@ -3,4 +3,6 @@ project(abugslife)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(abugslife main.cpp bug.cpp board.h board.cpp Crawler.cpp Crawler.h)
+add_executable(abugslife main.cpp bug.cpp board.h board.cpp Crawler.cpp Crawler.h
+        Hopper.cpp
+        Hopper.h)
