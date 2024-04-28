@@ -27,31 +27,31 @@ void Hopper::move()
 
         switch(direction){
             case 1: //north
-                position.second+hoplength;
-                if(position.second>9)
+                position.second=position.second-hoplength;
+                if(position.second<0)
                 {
-                    position.second = 9;
+                    position.second = 0;
                 }
                 break;
             case 2: //east
-                position.first+hoplength;
+                position.first=position.first+hoplength;
                 if(position.first>9)
                 {
-                    position.first = 9;
+                    position.first = 0;
                 }
                 break;
             case 3: //south
-                position.second-hoplength;
-                if(position.second<0)
+                position.second=position.second+hoplength;
+                if(position.second>9)
                 {
-                    position.second=0;
+                    position.second=9;
                 }
                 break;
             case 4: //west
-                position.first-hoplength;
+                position.first=position.first-hoplength;
                 if(position.first<0)
                 {
-                    position.second=0;
+                    position.first=0;
                 }
                 break;
         }

@@ -26,13 +26,13 @@ void Crawler::move()
 
         switch(direction){
             case 1: //north
-                position.second++;
+                position.second--;
                 break;
             case 2: //east
                 position.first++;
                 break;
             case 3: //south
-                position.second--;
+                position.second++;
                 break;
             case 4: //west
                 position.first--;
