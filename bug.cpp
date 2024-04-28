@@ -22,7 +22,7 @@ bool bug::isWayBlocked()
     }
 }
 
-int ranDirection()
+int bug::ranDirection()
 {
     random_device rd;
     uniform_int_distribution<int> dist(1, 4);
