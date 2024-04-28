@@ -18,6 +18,10 @@ public:
     void tap();
     void addBug(bug* b);
     bug* getBug(int i);
+    int getWidth();
+    int getHeight();
+
+    bool hasBugAt(int x, int y);
 
 protected:
     //Width, height variables

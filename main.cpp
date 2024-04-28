@@ -8,8 +8,8 @@
 
 using namespace std;
 bug* parseBug(string &pbug);
-void runBoard(board& bugBoard);
-bool hasBug(int x, int y, vector<bug*> bugs);
+void dispBoard(board& bugBoard);
+bool menu(board& bugBoard);
 
 //Initialisation function
 int main() {
@@ -31,8 +31,12 @@ int main() {
             b.addBug(parseBug(line));
         }
 
-        runBoard(b);
-
+        dispBoard(b);
+        bool run = menu(b);
+        while(run)
+        {
+            run = menu(b);
+        }
     }
     else
     {
@@ -78,12 +82,46 @@ bug* parseBug(string &pbug)
     }
     else
     {
-        return nullptr;
+        cout << "Invalid bug data." << endl;
+        terminate();
     }
 }
 
-//Main runtime function
-void runBoard(board& bugBoard)
+//Board display function
+void dispBoard(board& bugBoard) //Ordinarily this would use an SFML GUI. However, due to time constraints, this won't.
 {
+    for(int y = 0; y<=bugBoard.getHeight(); y++)
+    {
+        for(int x = 0; x<=bugBoard.getWidth(); x++)
+        {
+            if(bugBoard.hasBugAt(x, y))
+            {
+                cout << "X   ";
+            }
+            else
+            {
+                cout << "-   ";
+            }
+        }
+        cout << endl;
+    }
+}
 
+bool menu(board& bugBoard)
+{
+    cout << "1 - Tap board" << endl;
+    cout << "2 - Exit" << endl;
+
+    int input;
+    cin >> input;
+    switch(input){
+        case 1:
+            bugBoard.tap();
+            dispBoard(bugBoard);
+            return true;
+        case 2:
+            return false;
+        default:
+            return true;
+    }
 }

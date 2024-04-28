@@ -28,3 +28,8 @@ int bug::ranDirection()
     uniform_int_distribution<int> dist(1, 4);
     return dist(rd);
 }
+
+pair<int, int> bug::getPosition()
+{
+    return position;
+}

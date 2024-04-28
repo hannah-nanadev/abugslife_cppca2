@@ -23,3 +23,29 @@ bug* board::getBug(int i)
 {
     return bugs.at(i);
 }
+
+int board::getWidth()
+{
+    return w;
+}
+
+int board::getHeight()
+{
+    return h;
+}
+
+bool board::hasBugAt(int x, int y)
+{
+    pair<int, int> refPos(x, y);
+    bool hasBug = false;
+
+    for(int i = 0; i<bugs.size(); i++)
+    {
+        if(bugs.at(i)->getPosition()==refPos)
+        {
+            hasBug = true;
+        }
+    }
+    
+    return hasBug;
+}
