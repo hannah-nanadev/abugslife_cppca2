@@ -10,3 +10,4 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 cmake-build-debug/
+bugs_life_history_date_time.out

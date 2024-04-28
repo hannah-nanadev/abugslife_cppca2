@@ -121,34 +121,51 @@ bool menu(board& bugBoard)
 
     int input;
     cin >> input;
-    switch(input){
-        case 1: //Tap
+    switch(input) {
+        case 1: {//Tap
             bugBoard.tap();
             dispBoard(bugBoard);
             return true;
-        case 2: //Bug info
-            for(int i = 0; i<bugBoard.getBugs().size(); i++)
-            {
+        }
+        case 2: {//Bug info
+            for (int i = 0; i < bugBoard.getBugs().size(); i++) {
                 bugBoard.getBug(i)->display();
             }
             return true;
-        case 3: //Find by ID
+        }
+        case 3: {//Find by ID
             cout << "Enter bug ID >";
             int input;
             cin >> input;
             bugBoard.findBug(input);
             return true;
-        case 4: //Display History
-            for(int i = 0; i<bugBoard.getBugs().size(); i++)
-            {
+        }
+        case 4: {//Display History
+            for (int i = 0; i < bugBoard.getBugs().size(); i++) {
                 cout << bugBoard.getBug(i)->displayHistory();
             }
             return true;
-        case 5: //Display Cells
+        }
+        case 5: { //Display Cells
             return true;
-        case 6: //Exit
+        }
+        case 6: { //Exit
+            ofstream out("bugs_life_history_date_time.out");
+            if(out)
+            {
+                for (int i = 0; i < bugBoard.getBugs().size(); i++) {
+                    out << bugBoard.getBug(i)->displayHistory();
+                }
+                cout << "Life history saved to bugs_life_history_date_time.out" << endl;
+            }
+            else
+            {
+                cout << "Unable to save life history.";
+            }
             return false;
-        default:
+        }
+        default: {
             return true;
+        }
     }
 }
