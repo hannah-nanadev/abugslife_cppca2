@@ -5,7 +5,6 @@
 #ifndef ABUGSLIFE_CRAWLER_H
 #define ABUGSLIFE_CRAWLER_H
 #include "bug.h"
-#include "board.h"
 
 class Crawler:public bug{
 public :

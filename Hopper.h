@@ -6,7 +6,6 @@
 #define ABUGSLIFE_HOPPER_H
 
 #include "bug.h"
-#include "board.h"
 
 class Hopper: public bug{
 public:
