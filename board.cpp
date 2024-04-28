@@ -54,3 +54,21 @@ bool board::hasBugAt(int x, int y)
 
     return hasBug;
 }
+
+void board::findBug(int id)
+{
+    bool found = false;
+    for(int i = 0; i<bugs.size(); i++)
+    {
+        if(bugs.at(i)->getID()==id)
+        {
+            bugs.at(i)->display();
+            found = true;
+        }
+    }
+
+    if(!found)
+    {
+        cout << "bug " << id << " not found" << endl;
+    }
+}

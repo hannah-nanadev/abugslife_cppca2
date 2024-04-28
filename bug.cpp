@@ -24,10 +24,15 @@ bool bug::isWayBlocked()
 
 int bug::ranDirection()
 {
-    return rand()%3+1;
+    return (rand()%4)+1 ;
 }
 
 pair<int, int> bug::getPosition()
 {
     return position;
+}
+
+int bug::getID()
+{
+    return id;
 }

@@ -23,6 +23,7 @@ public:
     bool isWayBlocked();
     static int ranDirection();
     pair<int, int> getPosition();
+    int getID();
 };
 
 

@@ -133,6 +133,10 @@ bool menu(board& bugBoard)
             }
             return true;
         case 3:
+            cout << "Enter bug ID >";
+            int input;
+            cin >> input;
+            bugBoard.findBug(input);
             return true;
         case 4:
             return true;

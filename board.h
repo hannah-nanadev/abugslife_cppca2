@@ -21,7 +21,7 @@ public:
     int getWidth();
     int getHeight();
     vector<bug*> getBugs();
-
+    void findBug(int id);
     bool hasBugAt(int x, int y);
 
 protected:
