@@ -12,6 +12,7 @@ public:
     Hopper(int id, int x, int y, int dir, int size, int hop);
     void move() override;
     void display() override;
+    string displayHistory() override;
 
 protected:
     int hoplength;

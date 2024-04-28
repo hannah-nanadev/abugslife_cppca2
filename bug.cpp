@@ -4,6 +4,7 @@
 
 #include "bug.h"
 #include <random>
+#include <sstream>
 
 using namespace std;
 
@@ -35,4 +36,20 @@ pair<int, int> bug::getPosition()
 int bug::getID()
 {
     return id;
+}
+
+string bug::historyToString()
+{
+    int* x; int* y;
+    stringstream ss;
+
+    for(auto iter = path.begin(); iter!=path.end(); ++iter)
+    {
+        x = &iter->first;
+        y = &iter->second;
+        ss << "(" << *x << "," << *y << "),";
+    }
+
+    return ss.str();
+
 }

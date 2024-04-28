@@ -122,27 +122,31 @@ bool menu(board& bugBoard)
     int input;
     cin >> input;
     switch(input){
-        case 1:
+        case 1: //Tap
             bugBoard.tap();
             dispBoard(bugBoard);
             return true;
-        case 2:
+        case 2: //Bug info
             for(int i = 0; i<bugBoard.getBugs().size(); i++)
             {
                 bugBoard.getBug(i)->display();
             }
             return true;
-        case 3:
+        case 3: //Find by ID
             cout << "Enter bug ID >";
             int input;
             cin >> input;
             bugBoard.findBug(input);
             return true;
-        case 4:
+        case 4: //Display History
+            for(int i = 0; i<bugBoard.getBugs().size(); i++)
+            {
+                cout << bugBoard.getBug(i)->displayHistory();
+            }
             return true;
-        case 5:
+        case 5: //Display Cells
             return true;
-        case 6:
+        case 6: //Exit
             return false;
         default:
             return true;

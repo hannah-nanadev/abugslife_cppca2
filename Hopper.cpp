@@ -3,6 +3,7 @@
 //
 
 #include "Hopper.h"
+#include <sstream>
 
 Hopper::Hopper(int id, int x, int y, int dir, int size, int hop):bug()
 {
@@ -89,4 +90,11 @@ void Hopper::display()
     {
         cout << " Dead" << endl;
     }
+}
+
+string Hopper::displayHistory()
+{
+    stringstream ss;
+    ss << id << " Hopper Path: " << historyToString() << " Alive: " << alive << endl;
+    return ss.str();
 }

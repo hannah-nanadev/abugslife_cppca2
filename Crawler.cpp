@@ -3,6 +3,7 @@
 //
 
 #include "Crawler.h"
+#include <sstream>
 
 Crawler::Crawler(int id, int x, int y, int dir, int size):bug()
 {
@@ -70,4 +71,11 @@ void Crawler::display()
     {
         cout << "Dead" << endl;
     }
+}
+
+string Crawler::displayHistory()
+{
+    stringstream ss;
+    ss << id << " Crawler Path: " << historyToString() << " Alive: " << alive << endl;
+    return ss.str();
 }

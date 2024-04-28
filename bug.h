@@ -20,6 +20,8 @@ protected:
 public:
     virtual void move()=0;
     virtual void display()=0;
+    virtual string displayHistory()=0;
+    string historyToString();
     bool isWayBlocked();
     static int ranDirection();
     pair<int, int> getPosition();
