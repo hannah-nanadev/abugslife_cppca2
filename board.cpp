@@ -34,6 +34,11 @@ int board::getHeight()
     return h;
 }
 
+vector<bug*> board::getBugs()
+{
+    return bugs;
+}
+
 bool board::hasBugAt(int x, int y)
 {
     pair<int, int> refPos(x, y);
@@ -46,6 +51,6 @@ bool board::hasBugAt(int x, int y)
             hasBug = true;
         }
     }
-    
+
     return hasBug;
 }

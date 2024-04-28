@@ -20,6 +20,7 @@ public:
     bug* getBug(int i);
     int getWidth();
     int getHeight();
+    vector<bug*> getBugs();
 
     bool hasBugAt(int x, int y);
 

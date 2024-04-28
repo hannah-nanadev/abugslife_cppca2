@@ -10,6 +10,7 @@ class Crawler:public bug{
 public :
     Crawler(int id, int x, int y, int dir, int size);
     void move() override;
+    void display() override;
 };
 
 

@@ -10,30 +10,64 @@ Crawler::Crawler(int id, int x, int y, int dir, int size):bug()
     this->position = pair<int, int>(x, y);
     this->direction = dir;
     this->size = size;
+    this->alive = true;
+
     path.push_back(position);
 }
 
 void Crawler::move()
 {
-    while(isWayBlocked())
+    if(alive)
     {
-        direction = ranDirection();
+        while(isWayBlocked())
+        {
+            direction = ranDirection();
+        }
+
+        switch(direction){
+            case 1: //north
+                position.second++;
+                break;
+            case 2: //east
+                position.first++;
+                break;
+            case 3: //south
+                position.second--;
+                break;
+            case 4: //west
+                position.first--;
+                break;
+        }
+
+        path.push_back(position);
     }
+}
+
+void Crawler::display()
+{
+    cout << id << " Crawler (" << position.first << ", " << position.second << ") ";
 
     switch(direction){
         case 1: //north
-            position.second++;
+            cout << "North ";
             break;
         case 2: //east
-            position.first++;
+            cout << "East ";
             break;
         case 3: //south
-            position.second--;
+            cout << "South ";
             break;
         case 4: //west
-            position.first--;
+            cout << "West ";
             break;
     }
 
-    path.push_back(position);
+    if(alive)
+    {
+        cout << "Alive" << endl;
+    }
+    else
+    {
+        cout << "Dead" << endl;
+    }
 }

@@ -19,8 +19,9 @@ protected:
 
 public:
     virtual void move()=0;
+    virtual void display()=0;
     bool isWayBlocked();
-    int ranDirection();
+    static int ranDirection();
     pair<int, int> getPosition();
 };
 

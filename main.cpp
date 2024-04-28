@@ -6,6 +6,8 @@
 #include "Crawler.h"
 #include "Hopper.h"
 
+
+
 using namespace std;
 bug* parseBug(string &pbug);
 void dispBoard(board& bugBoard);
@@ -71,7 +73,8 @@ bug* parseBug(string &pbug)
     if(type=="H")
     {
         prototype = new Hopper
-                (fields.at(0), fields.at(1), fields.at(2), fields.at(3), fields.at(4), fields.at(5));
+                (fields.at(0), fields.at(1), fields.at(2), fields.at(3), fields.at(4),
+                 fields.at(5));
         return prototype;
     }
     else if(type=="C")
@@ -110,7 +113,11 @@ void dispBoard(board& bugBoard) //Ordinarily this would use an SFML GUI. However
 bool menu(board& bugBoard)
 {
     cout << "1 - Tap board" << endl;
-    cout << "2 - Exit" << endl;
+    cout << "2 - Display Bug Info" << endl;
+    cout << "3 - Find Bug by ID" << endl;
+    cout << "4 - Display History" << endl;
+    cout << "5 - Display Cells" << endl;
+    cout << "6 - Exit" << endl;
 
     int input;
     cin >> input;
@@ -120,6 +127,18 @@ bool menu(board& bugBoard)
             dispBoard(bugBoard);
             return true;
         case 2:
+            for(int i = 0; i<bugBoard.getBugs().size(); i++)
+            {
+                bugBoard.getBug(i)->display();
+            }
+            return true;
+        case 3:
+            return true;
+        case 4:
+            return true;
+        case 5:
+            return true;
+        case 6:
             return false;
         default:
             return true;
