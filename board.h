@@ -15,11 +15,15 @@ class board{
 
 public:
     board();
-    vector<bug*> bugs;
-    void tap(){};
+    void tap();
+    void addBug(bug* b);
+    bug* getBug(int i);
 
 protected:
     //Width, height variables
     int w;
     int h;
+
+    //Bug vector
+    vector<bug*> bugs;
 };

@@ -11,7 +11,7 @@
 class Hopper: public bug{
 public:
     Hopper(int id, int x, int y, int dir, int size, int hop);
-    void move();
+    void move() override;
 
 protected:
     int hoplength;

@@ -18,7 +18,7 @@ protected:
     list<pair<int,int>> path;
 
 public:
-    virtual void move()=0;
+    virtual void move();
     bool isWayBlocked();
     int ranDirection();
 };
