@@ -5,6 +5,7 @@
 #include "bug.h"
 #include "Crawler.h"
 #include "Hopper.h"
+#include "Meanderer.h"
 
 
 
@@ -80,6 +81,12 @@ bug* parseBug(string &pbug)
     else if(type=="C")
     {
         prototype = new Crawler
+                (fields.at(0), fields.at(1), fields.at(2), fields.at(3), fields.at(4));
+        return prototype;
+    }
+    else if(type=="M")
+    {
+        prototype = new Meanderer
                 (fields.at(0), fields.at(1), fields.at(2), fields.at(3), fields.at(4));
         return prototype;
     }
