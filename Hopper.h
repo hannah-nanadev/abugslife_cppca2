@@ -13,6 +13,7 @@ public:
     void move() override;
     void display() override;
     string displayHistory() override;
+    string getType() override;
 
 protected:
     int hoplength;

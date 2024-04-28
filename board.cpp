@@ -55,6 +55,21 @@ bool board::hasBugAt(int x, int y)
     return hasBug;
 }
 
+vector<bug*> board::findBugsAt(int x, int y)
+{
+    pair<int, int> refPos(x, y);
+    vector<bug*> found;
+    for(int i = 0; i<bugs.size(); i++)
+    {
+        if(bugs.at(i)->getPosition()==refPos)
+        {
+            found.push_back(bugs.at(i));
+        }
+    }
+
+    return found;
+}
+
 void board::findBug(int id)
 {
     bool found = false;

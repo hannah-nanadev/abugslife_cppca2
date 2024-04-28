@@ -147,6 +147,26 @@ bool menu(board& bugBoard)
             return true;
         }
         case 5: { //Display Cells
+            for(int y = 0; y<=bugBoard.getHeight(); y++)
+            {
+                for(int x = 0; x<=bugBoard.getWidth(); x++)
+                {
+                    cout << "(" << x << "," << y << "): ";
+                    if(bugBoard.hasBugAt(x, y))
+                    {
+                        vector<bug*> foundBugs = bugBoard.findBugsAt(x, y);
+                        for(int i = 0; i<foundBugs.size(); i++)
+                        {
+                            cout << foundBugs.at(i)->getType() << " " << foundBugs.at(i)->getID() << ", ";
+                        }
+                        cout << endl;
+                    }
+                    else
+                    {
+                        cout << "empty" << endl;
+                    }
+                }
+            }
             return true;
         }
         case 6: { //Exit

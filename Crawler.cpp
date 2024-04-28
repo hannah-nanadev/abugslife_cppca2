@@ -79,3 +79,7 @@ string Crawler::displayHistory()
     ss << id << " Crawler Path: " << historyToString() << " Alive: " << alive << endl;
     return ss.str();
 }
+
+string Crawler::getType(){
+    return "Crawler";
+}

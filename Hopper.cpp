@@ -98,3 +98,8 @@ string Hopper::displayHistory()
     ss << id << " Hopper Path: " << historyToString() << " Alive: " << alive << endl;
     return ss.str();
 }
+
+string Hopper::getType()
+{
+    return "Hopper";
+};

@@ -25,6 +25,7 @@ public:
     bool isWayBlocked();
     static int ranDirection();
     pair<int, int> getPosition();
+    virtual string getType()=0;
     int getID();
 };
 
